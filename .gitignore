@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class neu1 {
+    public static void main(String[] args) {
+        Scanner input= new Scanner(System.in);
+        System.out.print("sayı giriniz;");
+        int nunber=input.nextInt();
+        int basNumber=0;
+        int temNumber=nunber;
+        int basValue;
+        int result=0;
+        int baspow;
+        //BASAMAK SAYISINI BELİRLEME
+        while (temNumber !=0){
+            temNumber/=10;
+            basNumber++;
+        }
+System.out.println("BASAMAK SAYISI;"+ basNumber);
+
+        //SAYILARIN ELDE EDİLMESİ
+        temNumber=nunber;
+        while (temNumber!=0){
+            basValue=temNumber%10;
+            baspow=1;
+            for (int i=1;i<=basNumber;i++){
+                baspow*=basValue;
+            }
+            result+=baspow;
+            temNumber/=10;
+        }if (nunber==result){
+
+            System.out.println("Armstrong Sayısı;"+result);
+        }else {
+            System.out.println("Armstrong Sayısı DEĞİL;");
+        }
+
+
+
+
+    }
+}
